@@ -56,7 +56,7 @@ class ToolConfig:
     """
 
     # Conda environments -- set these to your own conda env paths
-    hxt_base_python: str = os.environ.get("FETALAGENT_HXT_BASE_PYTHON", "python")
+    fetal_base_python: str = os.environ.get("FETALAGENT_FETAL_BASE_PYTHON", "python")
     fetalclip_python: str = os.environ.get("FETALAGENT_FETALCLIP_PYTHON", "python")
     fetalclip2_python: str = os.environ.get("FETALAGENT_FETALCLIP2_PYTHON", "python")
     experiment_aaai_python: str = os.environ.get("FETALAGENT_EXPERIMENT_AAAI_PYTHON", "python")
@@ -390,7 +390,7 @@ def run_aop_sam_tool(case_dir: str, config: ToolConfig = TOOL_CONFIG) -> ToolRes
     out_dir = _agent_outputs_dir("aop", "aop_sam_step2", case_dir)
     gpu_id = os.environ.get("CUDA_VISIBLE_DEVICES", "0").split(",")[0]
     result = run_tool_subprocess(
-        python_path=config.hxt_base_python,
+        python_path=config.fetal_base_python,
         script_path=script,
         args=[
             "--data_path",
@@ -473,7 +473,7 @@ def run_upernet_aop_tool(case_dir: str, config: ToolConfig = TOOL_CONFIG) -> Too
     out_dir = _agent_outputs_dir("aop", "upernet", case_dir)
     gpu_id = os.environ.get("CUDA_VISIBLE_DEVICES", "0").split(",")[0]
     result = run_tool_subprocess(
-        python_path=config.hxt_base_python,
+        python_path=config.fetal_base_python,
         script_path=script,
         args=[
             "--data_path",
@@ -1019,7 +1019,7 @@ def run_nnunet_hc_tool(case_dir: str, config: ToolConfig = TOOL_CONFIG) -> ToolR
     script = os.path.join(config.agent_tools_dir, "nnunet_hc_seg_predict_agent.py")
     out_dir = _agent_outputs_dir("head_circumference", "nnunet", case_dir)
     result = run_tool_subprocess(
-        python_path=config.hxt_base_python,
+        python_path=config.fetal_base_python,
         script_path=script,
         args=[
             "--data_path",
@@ -1065,7 +1065,7 @@ def run_ga_algo1_tool(case_dir: str, config: ToolConfig = TOOL_CONFIG) -> ToolRe
     pixel_csv = ensure_pixel_csv(case_dir)
     
     result = run_tool_subprocess(
-        python_path=config.hxt_base_python,
+        python_path=config.fetal_base_python,
         script_path="predict_agent.py",
         args=["--img_dir", case_dir, "--pixel_csv", pixel_csv],
         cwd=config.ga_algo1_dir,
@@ -1138,7 +1138,7 @@ def run_ga_algo3_tool(case_dir: str, config: ToolConfig = TOOL_CONFIG) -> ToolRe
     pixel_csv = ensure_pixel_csv(case_dir)
 
     result = run_tool_subprocess(
-        python_path=config.hxt_base_python,
+        python_path=config.fetal_base_python,
         script_path="predict_agent.py",
         args=["--img_dir", case_dir, "--pixel_csv", pixel_csv],
         cwd=config.ga_algo3_dir,
@@ -1946,7 +1946,7 @@ def run_stomach_nnunet_seg_tool(case_dir: str, config: ToolConfig = TOOL_CONFIG)
     script = os.path.join(config.agent_tools_dir, "nnunet_stomach_seg_predict_agent.py")
     out_dir = _agent_outputs_dir("stomach_segmentation", "nnunet", case_dir)
     result = run_tool_subprocess(
-        python_path=config.hxt_base_python,
+        python_path=config.fetal_base_python,
         script_path=script,
         args=[
             "--data_path",
