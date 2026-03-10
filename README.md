@@ -81,7 +81,7 @@ This project relies on multiple model backends with different dependencies. In o
 
 Example environment groups:
 
-* **hxt_base**: AoP-SAM, UPerNet, nnU-Net, GA-RadImageNet, GA-ConvNeXt
+* **fetal_base**: AoP-SAM, UPerNet, nnU-Net, GA-RadImageNet, GA-ConvNeXt
 * **fetalclip**: FetalCLIP-based plane / sub-plane / GA tools
 * **fetalclip2**: SAMUS-based segmentation, video key-frame detection
 * **experiment_aaai**: CSM HC measurement, FU-LoRA plane classification
@@ -94,12 +94,12 @@ Example setup commands for these auxiliary environments are provided in ENVIRONM
 Set the Python executables for the corresponding environments:
 
 ```bash
-export FETALAGENTS_HXT_BASE_PYTHON=/path/to/envs/hxt_base/bin/python
+export FETALAGENTS_FETAL_BASE_PYTHON=/path/to/envs/fetal_base/bin/python
 export FETALAGENTS_FETALCLIP_PYTHON=/path/to/envs/fetalclip/bin/python
 export FETALAGENTS_FETALCLIP2_PYTHON=/path/to/envs/fetalclip2/bin/python
 export FETALAGENTS_EXPERIMENT_AAAI_PYTHON=/path/to/envs/experiment_aaai/bin/python
 export FETALAGENTS_USFM_PYTHON=/path/to/envs/USFM/bin/python
-export FETALAGENTS_NNUNET_PREDICT=/path/to/envs/hxt_base/bin/nnUNetv2_predict
+export FETALAGENTS_NNUNET_PREDICT=/path/to/envs/fetal_base/bin/nnUNetv2_predict
 ```
 
 If everything is installed into a single environment, the project can fall back to the default `python` executable.
