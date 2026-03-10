@@ -4,7 +4,7 @@
 run in separate Python environments. 
 
 
-## 1. `hxt_base`
+## 1. `fetal_base`
 
 Routed here by `main.py`:
 
@@ -185,10 +185,10 @@ typing-extensions==4.12.2
 After creating or reusing your environments, export the Python paths:
 
 ```bash
-export FETALAGENT_HXT_BASE_PYTHON=/path/to/envs/hxt_base/bin/python
+export FETALAGENT_FETAL_BASE_PYTHON=/path/to/envs/fetal_base/bin/python
 export FETALAGENT_FETALCLIP_PYTHON=/path/to/envs/fetalclip/bin/python
 export FETALAGENT_FETALCLIP2_PYTHON=/path/to/envs/fetalclip2/bin/python
 export FETALAGENT_EXPERIMENT_AAAI_PYTHON=/path/to/envs/experiment_aaai/bin/python
 export FETALAGENT_USFM_PYTHON=/path/to/envs/USFM/bin/python
-export FETALAGENT_NNUNET_PREDICT=/path/to/envs/hxt_base/bin/nnUNetv2_predict
+export FETALAGENT_NNUNET_PREDICT=/path/to/envs/fetal_base/bin/nnUNetv2_predict
 ```
